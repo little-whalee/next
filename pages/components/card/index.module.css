@@ -1,0 +1,30 @@
+.main_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  .bottom_img {
+    position: absolute; /* 底部图片绝对定位 */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 10px;
+  }
+  .card_container {
+    display: flex;
+    padding: 10px;
+    position: absolute; /* 卡片容器绝对定位 */
+    z-index: 2;
+    .background {
+      position: relative;
+    }
+    .content {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+  }
+  .card_container:hover {
+    transform: translate(4px, -4px); /* 向上和向右移动 4px */
+  }
+}
