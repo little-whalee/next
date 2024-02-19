@@ -1,0 +1,303 @@
+@font-face {
+  font-family: 'NeueMachinaRegular';
+  src: url('/fonts/neuemachina-regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NEXTBookRegular';
+  src: url('/fonts/NEXT-Book-Regular.otf') format('opentype');
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 1350px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  .top_line {
+    width: 46px;
+    height: 4px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(56, 193, 165, 1),
+      rgba(8, 145, 213, 1)
+    );
+    box-sizing: border-box;
+    border-radius: 11px;
+  }
+  .title {
+    font-family: 'NEXTBookRegular', sans-serif;
+    color: rgba(237, 237, 237, 1);
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .tags {
+    display: flex;
+    flex-direction: row;
+    margin-top: -5px;
+    font-family: 'NEXTBookRegular', sans-serif;
+    .tag {
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 1);
+      padding: 4px 8px;
+      border: 1px solid rgba(103, 103, 103, 1);
+      border-radius: 20px;
+      margin-right: 15px;
+    }
+  }
+  .main_container1 {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 auto;
+    .bottom_img1 {
+      position: absolute; /* 底部图片绝对定位 */
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding: 10px;
+    }
+    .card_container1 {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      position: absolute; /* 卡片容器绝对定位 */
+      z-index: 2;
+      .background {
+        position: relative;
+      }
+      .content1 {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+
+        .info {
+          color: rgba(103, 103, 103, 1);
+          font-weight: 400;
+          font-size: 12px;
+          display: flex;
+          width: 336px;
+          flex-wrap: wrap;
+          font-family: 'NEXTBookRegular', sans-serif;
+        }
+        .bottom {
+          display: flex;
+          flex-direction: row;
+          margin-top: 60px;
+          justify-content: space-between;
+          .side_info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .tip {
+              color: rgba(242, 242, 242, 1);
+              font-weight: 400;
+              font-size: 12px;
+              margin-left: 8px;
+              font-family: 'NeueMachinaRegular', sans-serif;
+            }
+          }
+          .special {
+            padding: 4px 16px 4px 16px;
+            box-sizing: border-box;
+            border-radius: 40px;
+            align-items: center;
+            display: flex;
+            border: 1px solid rgba(42, 42, 42, 1);
+            background-color: #2a2a2a;
+            .special_font {
+              color: rgba(158, 250, 19, 1);
+              font-weight: 400;
+              font-size: 10px;
+              margin-left: 6px;
+              font-family: 'NEXTBookRegular', sans-serif;
+            }
+          }
+        }
+      }
+    }
+    .card_container1:hover {
+      transform: translate(4px, -4px); /* 向上和向右移动 4px */
+    }
+  }
+  .main_container2 {
+    position: absolute;
+    left: 450px;
+    display: inline-block;
+    .bottom_img2 {
+      position: absolute; /* 底部图片绝对定位 */
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding: 10px;
+    }
+    .card_container2 {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      position: absolute; /* 卡片容器绝对定位 */
+      z-index: 2;
+      .background {
+        position: relative;
+      }
+      .content2 {
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        right: 40px;
+        .row {
+          display: flex;
+          flex-direction: column;
+          margin-top: 50px;
+          .box {
+            align-items: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(40, 40, 40, 1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            .catalogue {
+              color: rgba(103, 103, 103, 1);
+              font-weight: 400;
+              font-size: 12px;
+            }
+            .date {
+              color: rgba(237, 237, 237, 1);
+              font-weight: 300;
+              font-size: 14px;
+            }
+          }
+        }
+        .left {
+          position: absolute;
+          left: -40px;
+          top: 100px;
+        }
+      }
+    }
+    .card_container2:hover {
+      transform: translate(4px, -4px); /* 向上和向右移动 4px */
+    }
+  }
+  .main_container3 {
+    position: absolute;
+    left: 900px;
+    display: inline-block;
+    .bottom_img3 {
+      position: absolute; /* 底部图片绝对定位 */
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding: 10px;
+    }
+    .card_container3 {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      padding: 10px;
+      z-index: 2;
+      .background {
+        position: absolute;
+      }
+      .content3 {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+
+        .info {
+          color: rgba(103, 103, 103, 1);
+          font-weight: 400;
+          font-size: 12px;
+          display: flex;
+          width: 336px;
+          flex-wrap: wrap;
+          font-family: 'NEXTBookRegular', sans-serif;
+        }
+        .bottom {
+          display: flex;
+          flex-direction: row;
+          margin-top: 45px;
+          .side_info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .tip {
+              color: rgba(242, 242, 242, 1);
+              font-weight: 400;
+              font-size: 12px;
+              margin-left: 8px;
+              font-family: 'NeueMachinaRegular', sans-serif;
+            }
+          }
+        }
+        .right {
+          position: absolute;
+          right: -37px;
+          top: 72px;
+        }
+      }
+    }
+    .card_container3:hover {
+      transform: translate(4px, -4px); /* 向上和向右移动 4px */
+    }
+  }
+  .main_container4 {
+    position: absolute;
+    left: 1350px;
+    display: inline-block;
+    .bottom_img4 {
+      position: absolute; /* 底部图片绝对定位 */
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+      padding: 10px;
+    }
+    .card_container4 {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      padding: 10px;
+      z-index: 2;
+      .background {
+        position: relative;
+      }
+      .content4 {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        .image {
+          margin-left: -10px;
+          margin-top: -15px;
+        }
+        .last_title {
+          font-weight: 700;
+          font-size: 16px;
+          color: rgba(237, 237, 237, 1);
+          position: absolute;
+          top: 130px;
+        }
+        .last_info {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          position: absolute;
+          top: 200px;
+          left: 220px;
+          .tip {
+            color: rgba(242, 242, 242, 1);
+            font-weight: 400;
+            font-size: 12px;
+            margin-left: 8px;
+            font-family: 'NeueMachinaRegular', sans-serif;
+          }
+        }
+      }
+    }
+    .card_container4:hover {
+      transform: translate(4px, -4px); /* 向上和向右移动 4px */
+    }
+  }
+}
