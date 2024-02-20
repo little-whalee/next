@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
       }
       // 检查是否已经滑动到最右边
       if (
-        container.scrollLeft + container.clientWidth + 4 >=
+        container.scrollLeft + container.clientWidth >=
         container.scrollWidth
       ) {
         setShowIcon(false);
@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
     const currentScroll = container.scrollLeft;
     const newScroll = currentScroll - slideWidth;
     container.scrollTo({
-      left: newScroll,
+      left: 0,
       behavior: 'smooth',
     });
   };
@@ -66,132 +66,133 @@ const HomePage: React.FC = () => {
     const currentScroll = container.scrollLeft;
     const newScroll = currentScroll + slideWidth;
     container.scrollTo({
-      left: newScroll,
+      left: 1000000,
       behavior: 'smooth',
     });
   };
 
   return (
-    <div className={styles.container} ref={containerRef}>
-      <Card
-        backgroundImg="/assets/first.png"
-        bottomImg="/assets/background3.png"
-      >
-        <div className={styles.top_line} />
-        <p className={styles.title}>Introduction to programming</p>
-        <div className={styles.tags}>
-          <div className={styles.tag}>Beginner</div>
-        </div>
-        <p className={styles.info}>{CARD1_INFO_PARAM}</p>
-        <div
-          className={styles.bottom}
-          style={{ justifyContent: 'space-between' }}
+    <div className={styles.container}>
+      <div className={styles.box_container} ref={containerRef}>
+        {!showIcon && <div className={styles.leftGradient} />}
+        <Card
+          backgroundImg="/assets/first.png"
+          bottomImg="/assets/background3.png"
         >
-          <div className={styles.side_info}>
-            <img src="/assets/clock.png" alt="first" />
-            <p className={styles.tip}>{HOUR_PARAM}</p>
+          <div className={styles.top_line} />
+          <p className={styles.title}>Introduction to programming</p>
+          <div className={styles.tags}>
+            <div className={styles.tag}>Beginner</div>
           </div>
-          <div className={styles.side_info}>
-            <img src="/assets/book.png" alt="first" />
-            <p className={styles.tip}>{COURSE_PARAM}</p>
+          <p className={styles.info}>{CARD1_INFO_PARAM}</p>
+          <div
+            className={styles.bottom}
+            style={{ justifyContent: 'space-between' }}
+          >
+            <div className={styles.side_info}>
+              <img src="/assets/clock.png" alt="first" />
+              <p className={styles.tip}>{HOUR_PARAM}</p>
+            </div>
+            <div className={styles.side_info}>
+              <img src="/assets/book.png" alt="first" />
+              <p className={styles.tip}>{COURSE_PARAM}</p>
+            </div>
+            <div className={styles.special}>
+              <img src="/assets/flight.png" alt="first" />
+              <span className={styles.special_font}>{FLIGHT_PARAM}</span>
+            </div>
           </div>
-          <div className={styles.special}>
-            <img src="/assets/flight.png" alt="first" />
-            <span className={styles.special_font}>{FLIGHT_PARAM}</span>
+        </Card>
+        <Card
+          backgroundImg="/assets/second.png"
+          bottomImg="/assets/background1.png"
+        >
+          <p className={styles.title}>Moonshot 2023 Summer Hackathon</p>
+          <div className={styles.tags}>
+            <div className={styles.tag}>All Tracks</div>
+            <div className={styles.tag}>Solidity</div>
+            <div className={styles.tag}>ZK</div>
           </div>
-        </div>
-      </Card>
-      <Card
-        backgroundImg="/assets/second.png"
-        bottomImg="/assets/background1.png"
-        containerStyle={{ position: 'absolute', left: 450 }}
-      >
-        <p className={styles.title}>Moonshot 2023 Summer Hackathon</p>
-        <div className={styles.tags}>
-          <div className={styles.tag}>All Tracks</div>
-          <div className={styles.tag}>Solidity</div>
-          <div className={styles.tag}>ZK</div>
-        </div>
-        <div className={styles.row} style={{ width: 336 }}>
-          <div className={styles.box}>
-            <span className={styles.catalogue}>Signup</span>
-            <span className={styles.date}>4/15-6/15</span>
+          <div className={styles.row} style={{ width: 336 }}>
+            <div className={styles.box}>
+              <span className={styles.catalogue}>Signup</span>
+              <span className={styles.date}>4/15-6/15</span>
+            </div>
+            <div className={styles.box}>
+              <span className={styles.catalogue}>Event</span>
+              <span className={styles.date}>6/15 - 7/15</span>
+            </div>
+            <div className={styles.box}>
+              <span className={styles.catalogue}>Grant size</span>
+              <span className={styles.date}>200K</span>
+            </div>
           </div>
-          <div className={styles.box}>
-            <span className={styles.catalogue}>Event</span>
-            <span className={styles.date}>6/15 - 7/15</span>
-          </div>
-          <div className={styles.box}>
-            <span className={styles.catalogue}>Grant size</span>
-            <span className={styles.date}>200K</span>
-          </div>
-        </div>
-        {!showIcon && (
-          <img
-            src="/assets/left.png"
-            alt="more"
-            className={styles.left}
-            ref={leftRef}
-            onClick={() => handleLeftButtonClick()}
+          {!showIcon && (
+            <img
+              src="/assets/left.png"
+              alt="more"
+              className={styles.left}
+              ref={leftRef}
+              onClick={() => handleLeftButtonClick()}
+            />
+          )}
+        </Card>
+        <Card
+          backgroundImg="/assets/third.png"
+          bottomImg="/assets/background2.png"
+        >
+          <div
+            className={styles.top_line}
+            style={{
+              backgroundImage:
+                'linear-gradient(to bottom, rgba(217, 227, 19, 1), rgba(60, 188, 52, 1))',
+            }}
           />
-        )}
-      </Card>
-      <Card
-        backgroundImg="/assets/third.png"
-        bottomImg="/assets/background2.png"
-        containerStyle={{ position: 'absolute', left: 900 }}
-      >
-        <div
-          className={styles.top_line}
-          style={{
-            backgroundImage:
-              'linear-gradient(to bottom, rgba(217, 227, 19, 1), rgba(60, 188, 52, 1))',
-          }}
-        />
-        <p className={styles.title}>Web 3.0 Programming Basics</p>
-        <div className={styles.tags}>
-          <div className={styles.tag}>Beginner</div>
-        </div>
-        <p className={styles.info}>{CARD3_INFO_PARAM}</p>
-        <div className={styles.bottom}>
-          <div className={styles.side_info} style={{ marginRight: 30 }}>
-            <img src="/assets/clock.png" alt="first" />
-            <p className={styles.tip}>{HOUR_PARAM}</p>
+          <p className={styles.title}>Web 3.0 Programming Basics</p>
+          <div className={styles.tags}>
+            <div className={styles.tag}>Beginner</div>
           </div>
-          <div className={styles.side_info}>
-            <img src="/assets/book.png" alt="first" />
-            <p className={styles.tip}>{COURSE_PARAM}</p>
+          <p className={styles.info}>{CARD3_INFO_PARAM}</p>
+          <div className={styles.bottom}>
+            <div className={styles.side_info} style={{ marginRight: 30 }}>
+              <img src="/assets/clock.png" alt="first" />
+              <p className={styles.tip}>{HOUR_PARAM}</p>
+            </div>
+            <div className={styles.side_info}>
+              <img src="/assets/book.png" alt="first" />
+              <p className={styles.tip}>{COURSE_PARAM}</p>
+            </div>
           </div>
-        </div>
-        {showIcon && (
-          <img
-            src="/assets/right.png"
-            alt="more"
-            className={styles.right}
-            onClick={() => handleRightButtonClick()}
-            ref={rightRef}
+          {showIcon && (
+            <img
+              src="/assets/right.png"
+              alt="more"
+              className={styles.right}
+              onClick={() => handleRightButtonClick()}
+              ref={rightRef}
+            />
+          )}
+        </Card>
+        <Card
+          backgroundImg="/assets/forth.png"
+          bottomImg="/assets/background4.png"
+        >
+          <div
+            className={styles.top_line}
+            style={{
+              backgroundImage:
+                'linear-gradient(to bottom, rgba(224, 173, 56, 1), rgba(235, 62, 28, 1))',
+            }}
           />
-        )}
-      </Card>
-      <Card
-        backgroundImg="/assets/forth.png"
-        bottomImg="/assets/background4.png"
-        containerStyle={{ position: 'absolute', left: 1350 }}
-      >
-        <div
-          className={styles.top_line}
-          style={{
-            backgroundImage:
-              'linear-gradient(to bottom, rgba(224, 173, 56, 1), rgba(235, 62, 28, 1))',
-          }}
-        />
-        <img src="/assets/forth2.png" alt="first" className={styles.image} />
-        <p className={styles.last_title}>What is Bitcoin</p>
-        <div className={styles.last_info}>
-          <img src="/assets/clock.png" alt="first" />
-          <p className={styles.tip}>36 Hour</p>
-        </div>
-      </Card>
+          <img src="/assets/forth2.png" alt="first" className={styles.image} />
+          <p className={styles.last_title}>What is Bitcoin</p>
+          <div className={styles.last_info}>
+            <img src="/assets/clock.png" alt="first" />
+            <p className={styles.tip}>36 Hour</p>
+          </div>
+        </Card>
+        {showIcon && <div className={styles.rightGradient} />}
+      </div>
     </div>
   );
 };

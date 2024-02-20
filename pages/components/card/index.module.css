@@ -1,10 +1,7 @@
 .main_container {
-  position: relative;
   display: flex;
   flex-direction: column;
-  flex: 0 0 auto;
   .bottom_img {
-    position: absolute; /* 底部图片绝对定位 */
     top: 0;
     left: 0;
     z-index: 1;

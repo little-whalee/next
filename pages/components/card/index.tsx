@@ -4,16 +4,14 @@ interface CardProps {
   backgroundImg: string;
   bottomImg: string;
   children: React.ReactNode;
-  containerStyle?: CSSProperties;
 }
 const CustomCard: React.FC<CardProps> = ({
   backgroundImg,
   bottomImg,
   children,
-  containerStyle = {},
 }) => {
   return (
-    <div className={styles.main_container} style={containerStyle}>
+    <div className={styles.main_container}>
       <img src={bottomImg} alt="bottom" className={styles.bottom_img} />
       <div className={styles.card_container}>
         <img src={backgroundImg} alt="first" className={styles.background} />
